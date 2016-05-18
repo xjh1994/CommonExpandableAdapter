@@ -5,6 +5,8 @@ ExpandableListView(可展开的列表组件)通用Adapter
 <img src="https://github.com/xjh1994/CommonExpandableAdapter/blob/master/screenshot.png" width = "30%" height = "30%" alt="截图" />
 
 # 使用
+下载下来导入到AS中，commonexpandableadapter是库，app下是demo
+
 详细代码见`MainActivity.java`
 
     commonExpandableAdapter = new CommonExpandableAdapter(this, groupList, childList) {
