@@ -5,9 +5,9 @@ ExpandableListView(可展开的列表组件)通用Adapter
 <img src="https://github.com/xjh1994/CommonExpandableAdapter/blob/master/screenshot.png" width = "30%" height = "30%" alt="截图" />
 
 # 使用
-详细代码见MainActivity.java。
-`
-commonExpandableAdapter = new CommonExpandableAdapter(this, groupList, childList) {
+详细代码见`MainActivity.java`
+
+    commonExpandableAdapter = new CommonExpandableAdapter(this, groupList, childList) {
 
     @Override
     public int getGroupLayoutResId() {
@@ -49,15 +49,14 @@ commonExpandableAdapter = new CommonExpandableAdapter(this, groupList, childList
         ((ChildHolder) holder).textView.setText(((String) data));
     }
 };
-`
-创建ViewHolder
-`
-class GroupHolder {
-    public TextView textView;
-}
 
-class ChildHolder {
-    public TextView textView;
-}
-`
+创建ViewHolder
+
+    class GroupHolder {
+	    public TextView textView;
+	}
+	
+	class ChildHolder {
+	    public TextView textView;
+	}
 
