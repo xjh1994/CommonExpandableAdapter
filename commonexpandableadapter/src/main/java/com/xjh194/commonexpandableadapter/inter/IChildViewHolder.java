@@ -2,10 +2,10 @@ package com.xjh194.commonexpandableadapter.inter;
 
 import android.view.View;
 
-public interface IChildViewHolder<T> {
+public interface IChildViewHolder<C> {
 	
-	public  T getChildViewHolder();
+	public  C getChildViewHolder();
 	
-	public  void initChildViewHolder(T holder, View view);
+	public  void initChildViewHolder(C holder, View view);
       
 }

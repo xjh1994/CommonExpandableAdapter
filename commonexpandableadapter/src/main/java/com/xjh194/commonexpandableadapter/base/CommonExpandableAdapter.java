@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/5/18.
  */
-public abstract class CommonExpandableAdapter<T, E> extends BaseExpandableListAdapter implements IExpandableListItem<T, E>, IGroupViewHolder<T>, IChildViewHolder<T> {
+public abstract class CommonExpandableAdapter<T, E, G, C> extends BaseExpandableListAdapter implements IExpandableListItem<G, C, T, E>, IGroupViewHolder<G>, IChildViewHolder<C> {
 
     private Context context;
     List<T> groupList;
@@ -64,14 +64,14 @@ public abstract class CommonExpandableAdapter<T, E> extends BaseExpandableListAd
 
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-        T holder;
+        G holder;
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(getGroupLayoutResId(), null);
             holder = getGroupViewHolder();
             initGroupViewHolder(holder, convertView);
             convertView.setTag(holder);
         } else {
-            holder = (T) convertView.getTag();
+            holder = (G) convertView.getTag();
         }
 
         handleGroupData(holder, context, groupList.get(groupPosition), 0);
@@ -81,14 +81,14 @@ public abstract class CommonExpandableAdapter<T, E> extends BaseExpandableListAd
 
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        T holder;
+        C holder;
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(getchildLayoutResId(), null);
             holder = getChildViewHolder();
             initChildViewHolder(holder, convertView);
             convertView.setTag(holder);
         } else {
-            holder = (T) convertView.getTag();
+            holder = (C) convertView.getTag();
         }
 
         handleChildData(holder, context, childList.get(groupPosition).get(childPosition), 0);
